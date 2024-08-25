@@ -1,2 +1,1 @@
-# HackerRIT
-Open Source Online Coding Contest Platform
+# H1k0r

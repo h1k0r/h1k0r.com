@@ -96,3 +96,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Get blog.html all elements with the class "animate"
+const animateElements = document.querySelectorAll('.animate');
+
+// Add event listener to window scroll event
+window.addEventListener('scroll', () => {
+  // Get the current scroll position
+  const scrollPosition = window.scrollY;
+
+  // Loop through each animate element
+  animateElements.forEach((element) => {
+    // Get the element's offset top position
+    const offsetTop = element.offsetTop;
+
+    // Check if the element is in view
+    if (scrollPosition + window.innerHeight > offsetTop) {
+      // Add the "active" class to the element
+      element.classList.add('active');
+    } else {
+      // Remove the "active" class from the element
+      element.classList.remove('active');
+    }
+  });
+});

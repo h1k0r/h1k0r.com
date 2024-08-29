@@ -109,26 +109,88 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Get blog.html all elements with the class "animate"
-const animateElements = document.querySelectorAll('.animate');
+// Select elements
+const categorySelect = document.getElementById('category');
+const searchInput = document.getElementById('search');
+const searchBtn = document.getElementById('search-btn');
+const sortSelect = document.getElementById('sort');
+const loadMoreBtn = document.getElementById('load-more-btn');
+const loadMoreContainer = document.getElementById('load-more-container');
+const blogPostsContainer = document.getElementById('blog-posts');
 
-// Add event listener to window scroll event
-window.addEventListener('scroll', () => {
-  // Get the current scroll position
-  const scrollPosition = window.scrollY;
+// Event listeners
+categorySelect.addEventListener('change', filterPosts);
+searchBtn.addEventListener('click', searchPosts);
+sortSelect.addEventListener('change', sortPosts);
+loadMoreBtn.addEventListener('click', loadMorePosts);
 
-  // Loop through each animate element
-  animateElements.forEach((element) => {
-    // Get the element's offset top position
-    const offsetTop = element.offsetTop;
-
-    // Check if the element is in view
-    if (scrollPosition + window.innerHeight > offsetTop) {
-      // Add the "active" class to the element
-      element.classList.add('active');
+// Filter posts by category
+function filterPosts() {
+  const selectedCategory = categorySelect.value;
+  const posts = document.querySelectorAll('.post-card');
+  posts.forEach((post) => {
+    if (post.dataset.category === selectedCategory || selectedCategory === 'all') {
+      post.style.display = 'block';
     } else {
-      // Remove the "active" class from the element
-      element.classList.remove('active');
+      post.style.display = 'none';
     }
   });
-});
+}
+
+// Search posts
+function searchPosts() {
+  const searchTerm = searchInput.value.toLowerCase();
+  const posts = document.querySelectorAll('.post-card');
+  posts.forEach((post) => {
+    const postTitle = post.querySelector('.post-info h2').textContent.toLowerCase();
+    const postExcerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+    if (postTitle.includes(searchTerm) || postExcerpt.includes(searchTerm)) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  });
+}
+
+// Sort posts
+function sortPosts() {
+  const selectedSort = sortSelect.value;
+  const posts = document.querySelectorAll('.post-card');
+  if (selectedSort === 'latest') {
+    posts.sort((a, b) => {
+      const dateA = new Date(a.querySelector('.post-meta').textContent);
+      const dateB = new Date(b.querySelector('.post-meta').textContent);
+      return dateB - dateA;
+    });
+  } else if (selectedSort === 'popular') {
+    // Add logic to sort by popularity (e.g., number of comments, views, etc.)
+  } else if (selectedSort === 'oldest') {
+    posts.sort((a, b) => {
+      const dateA = new Date(a.querySelector('.post-meta').textContent);
+      const dateB = new Date(b.querySelector('.post-meta').textContent);
+      return dateA - dateB;
+    });
+  }
+  blogPostsContainer.innerHTML = '';
+  posts.forEach((post) => {
+    blogPostsContainer.appendChild(post);
+  });
+}
+
+// Load more posts
+function loadMorePosts() {
+  // Add logic to load more posts (e.g., AJAX request, etc.)
+  // For demonstration purposes, we'll just append a new post
+  const newPost = document.createElement('div');
+  newPost.classList.add('post-card');
+  newPost.innerHTML = `
+    <img src="images/new-post.jpg" alt="New Post">
+    <div class="post-info">
+      <h2>New Post Title</h2>
+      <p class="post-meta">Published on ${new Date().toLocaleDateString()} by <a href="#">Admin</a></p>
+      <p class="post-excerpt">This is a new post excerpt.</p>
+      <a href="#" class="btn-primary">Read More</a>
+    </div>
+  `;
+  blogPostsContainer.appendChild(newPost);
+}

@@ -1,11 +1,12 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #1e1e1e;
     color: #e0e0e0;
     line-height: 1.6;
+    padding-top: 80px; /* Adjusted for fixed header */
 }
 
 /* Header and Navigation */
@@ -40,6 +41,7 @@ nav .logo a {
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap; /* Added for better wrapping on smaller screens */
 }
 
 nav ul li {
@@ -205,40 +207,6 @@ nav ul li a:hover {
     background-color: #009900;
 }
 
-/* Footer */
-footer {
-    background-color: #0d0d0d;
-    text-align: center;
-    padding: 20px;
-    color: #cccccc;
-    font-size: 14px;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-}
-
-.footer-links li {
-    display: inline;
-    margin: 0 10px;
-}
-
-.footer-links a {
-    color: #00ff00;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #009900;
-}
-
-
-
-
-
 /* Events Section */
 .events {
     max-width: 1200px;
@@ -329,4 +297,71 @@ footer {
     padding: 20px;
     color: #cccccc;
     font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #00ff00;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #009900;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .feature-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .event-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
 }

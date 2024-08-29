@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Home - H1k0r</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
                 <a href="index.html">H1k0r</a>
             </div>
             <ul>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="pages/about.html">About</a></li>
                 <li><a href="pages/blog.html">Blog</a></li>
                 <li><a href="pages/tools.html">Tools</a></li>
@@ -36,25 +36,25 @@
 
         <section class="features">
             <div class="feature-card">
-                <img src="images/feature1.jpg" alt="Feature 1">
+                <img src="images/feature1.jpg" alt="Cyber Security Internships">
                 <div class="feature-info">
                     <h2>Cyber Security Internships</h2>
                     <p>Gain hands-on experience in cyber security and help protect victims from cyber fraud.</p>
-                    <a href="internships.html" class="btn-secondary">Apply Now</a>
+                    <a href="pages/internships.html" class="btn-secondary">Apply Now</a>
                 </div>
             </div>
 
             <div class="feature-card">
-                <img src="images/feature2.jpg" alt="Feature 2">
+                <img src="images/feature2.jpg" alt="Programming Internships">
                 <div class="feature-info">
                     <h2>Programming Internships</h2>
                     <p>Develop your programming skills and contribute to the development of modern AI and cyber security tools.</p>
-                    <a href="internships.html" class="btn-secondary">Apply Now</a>
+                    <a href="pages/internships.html" class="btn-secondary">Apply Now</a>
                 </div>
             </div>
 
             <div class="feature-card">
-                <img src="images/feature3.png" alt="Feature 3">
+                <img src="images/feature3.png" alt="Cyber Security Tools">
                 <div class="feature-info">
                     <h2>Cyber Security Tools</h2>
                     <p>Explore our suite of cutting-edge cyber security tools designed to protect individuals and organizations from cyber threats.</p>
@@ -63,7 +63,7 @@
             </div>
 
             <div class="feature-card">
-                <img src="images/feature4.jpg" alt="Feature 4">
+                <img src="images/feature4.jpg" alt="Blog and Resources">
                 <div class="feature-info">
                     <h2>Blog and Resources</h2>
                     <p>Stay updated with our blog posts and resources on hacking, pentesting, and cyber security best practices.</p>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="feature-card">
-                <img src="images/feature5.jpg" alt="Feature 5">
+                <img src="images/feature5.jpg" alt="Events and Webinars">
                 <div class="feature-info">
                     <h2>Events and Webinars</h2>
                     <p>Join our upcoming events and webinars to learn from industry experts and network with like-minded individuals.</p>
@@ -84,8 +84,8 @@
         <section class="cta">
             <h2>Join the Community</h2>
             <p>Be part of our growing community of cyber security enthusiasts. Sign up for our newsletter to get the latest updates and insights.</p>
-            <form id="newsletter-form">
-                <input type="email" id="email" placeholder="Enter your email" required>
+            <form id="newsletter-form" action="#" method="POST">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <button type="submit" class="btn-primary">Subscribe</button>
             </form>
         </section>
@@ -94,4 +94,10 @@
     <footer>
         <p>&copy; 2024 H1k0r. All rights reserved.</p>
         <ul class="footer-links">
-            <li><a
+            <li><a href="pages/privacy.html">Privacy Policy</a></li>
+            <li><a href="pages/terms.html">Terms of Service</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

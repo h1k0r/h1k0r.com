@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - H1k0r</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">H1k0r</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-intro">
+            <h1>Contact Us</h1>
+            <p>We offer 24/7 help and support to ensure you get the assistance you need at any time. Feel free to reach out to us via the contact form, email, or phone.</p>
+        </section>
+
+        <section class="contact-details">
+            <div class="contact-card">
+                <h2>24/7 Help Desk</h2>
+                <p>If you have any questions or need immediate assistance, our help desk is available around the clock. We are here to support you with any issues you may encounter.</p>
+                <p><strong>Email:</strong> <a href="mailto:support@h1k0r.com">support@h1k0r.com</a></p>
+                <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+            </div>
+
+            <div class="contact-card">
+                <h2>Online Chat</h2>
+                <p>For quick answers, you can use our online chat feature. Click the chat icon at the bottom right of the page to start a conversation with one of our support agents.</p>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="submit_form.php" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 H1k0r. All rights reserved.</p>
+        <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

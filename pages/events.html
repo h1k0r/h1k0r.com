@@ -3,79 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events - H1k0r</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Stay updated on upcoming events, workshops, and competitions hosted by h1k0r.">
+    <title>Events | h1k0r</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #f4f4f4;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: #1a1a1a;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            position: relative;
+        }
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1e90ff;
+        }
+        h2 {
+            color: #1e90ff;
+            margin-top: 20px;
+        }
+        .event-card {
+            background: #2b2b2b;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .event-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .event-title {
+            color: #ffffff;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .event-date {
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+        .event-description {
+            color: #f4f4f4;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #1e90ff, 0 0 10px #1e90ff, 0 0 15px #1e90ff, 0 0 20px #1e90ff; }
+            100% { text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff; }
+        }
+        .neon {
+            color: #1e90ff;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta a {
+            color: #ffffff;
+            background: #1e90ff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .cta a:hover {
+            background: #4b9cdb;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">H1k0r</a>
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="tools.html">Tools</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section class="hero-small">
-            <h1>Upcoming Events</h1>
-            <p>Join the latest webinars, conferences, and meetups in ethical hacking and cybersecurity.</p>
-        </section>
+    <div class="container">
+        <h1>Upcoming Events</h1>
 
-        <section class="events">
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="event-month">SEP</span>
-                    <span class="event-day">15</span>
-                </div>
-                <div class="event-details">
-                    <h2>Cybersecurity Conference 2024</h2>
-                    <p><strong>Location:</strong> New York, NY</p>
-                    <p>Join top cybersecurity experts for a full day of talks, workshops, and networking.</p>
-                    <a href="https://example.com/conference-2024" class="btn">Learn More</a>
-                </div>
-            </div>
+        <div class="event-card">
+            <h2 class="event-title neon">Hackathon 2024</h2>
+            <p class="event-date">Date: October 15, 2024</p>
+            <p class="event-description">Join us for a 24-hour hackathon where you can collaborate with other hackers and showcase your skills. Prizes for top performers!</p>
+        </div>
 
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="event-month">OCT</span>
-                    <span class="event-day">10</span>
-                </div>
-                <div class="event-details">
-                    <h2>Webinar: Advanced Penetration Testing Techniques</h2>
-                    <p><strong>Location:</strong> Online</p>
-                    <p>A live webinar focused on advanced penetration testing methods, led by industry experts.</p>
-                    <a href="https://example.com/webinar-pentest" class="btn">Register Now</a>
-                </div>
-            </div>
+        <div class="event-card">
+            <h2 class="event-title neon">Cybersecurity Workshop</h2>
+            <p class="event-date">Date: November 5, 2024</p>
+            <p class="event-description">A hands-on workshop covering advanced topics in cybersecurity. Learn from industry experts and gain practical experience.</p>
+        </div>
 
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="event-month">NOV</span>
-                    <span class="event-day">5</span>
-                </div>
-                <div class="event-details">
-                    <h2>Hacker Meetup 2024</h2>
-                    <p><strong>Location:</strong> San Francisco, CA</p>
-                    <p>A casual meetup for ethical hackers to network, share experiences, and discuss the latest in cybersecurity.</p>
-                    <a href="https://example.com/meetup-2024" class="btn">RSVP</a>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div class="event-card">
+            <h2 class="event-title neon">CTF Competition</h2>
+            <p class="event-date">Date: December 1, 2024</p>
+            <p class="event-description">Participate in our Capture The Flag competition. Solve challenges in various categories to win exciting prizes!</p>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 H1k0r. All rights reserved.</p>
-    </footer>
+        <div class="cta">
+            <a href="https://example.com/register" target="_blank">Register Now</a>
+        </div>
+    </div>
 
-    <script src="js/scripts.js"></script>
 </body>
 </html>

@@ -26,4 +26,17 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.remove('glow');
         });
     });
+    
+    // Responsive adjustments for mobile devices
+    if (window.innerWidth < 768) {
+        // Example: Disable hover effects on mobile to avoid issues with touch screens
+        buttons.forEach(button => {
+            button.removeEventListener('mouseenter', function () {
+                this.classList.add('glow');
+            });
+            button.removeEventListener('mouseleave', function () {
+                this.classList.remove('glow');
+            });
+        });
+    }
 });

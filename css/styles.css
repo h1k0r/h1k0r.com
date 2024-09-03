@@ -1,367 +1,204 @@
-/* General Styles */
+/* Global Styles */
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    line-height: 1.6;
-    padding-top: 80px; /* Adjusted for fixed header */
+    box-sizing: border-box;
 }
 
-/* Header and Navigation */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 header {
-    background-color: #0d0d0d;
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: #333;
+    color: #fff;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 1rem;
 }
 
-nav .logo a {
-    color: #00ff00;
-    font-size: 28px;
-    text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 2px;
+.logo a {
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    flex-wrap: wrap; /* Added for better wrapping on smaller screens */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
 nav ul li a {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s;
+    color: #fff;
+    font-size: 1rem;
 }
 
-nav ul li a:hover {
-    color: #00ff00;
-}
-
-/* Hero Section */
 .hero {
-    background: url('images/hero-background.jpg') no-repeat center center/cover;
-    color: #ffffff;
-    padding: 120px 20px 80px;
+    height: 50vh;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    position: relative;
+    color: #fff;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 .hero p {
-    font-size: 22px;
-    margin-bottom: 30px;
+    font-size: 1.25rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .btn-primary {
-    background-color: #00ff00;
-    color: #0d0d0d;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    background-color: #007BFF;
 }
 
 .btn-primary:hover {
-    background-color: #009900;
+    background-color: #0056b3;
 }
 
-/* Features Section */
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
 .features {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 2rem;
 }
 
 .feature-card {
-    background-color: #2e2e2e;
-    border-radius: 8px;
+    flex: 1 1 30%;
+    margin: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     overflow: hidden;
-    width: calc(33.333% - 20px);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
 }
 
 .feature-card img {
     width: 100%;
     height: auto;
-    object-fit: cover;
 }
 
 .feature-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
+    padding: 1rem;
 }
 
-.feature-info h2 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    color: #ffffff;
-}
-
-.feature-info p {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #cccccc;
-}
-
-.btn-secondary {
-    background-color: #00ff00;
-    color: #0d0d0d;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.btn-secondary:hover {
-    background-color: #009900;
-}
-
-/* CTA Section */
 .cta {
-    background-color: #0d0d0d;
-    padding: 50px 20px;
+    background: #f8f9fa;
+    padding: 2rem;
     text-align: center;
 }
 
-.cta h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
-    color: #ffffff;
+.cta form {
+    margin: 1rem 0;
 }
 
-.cta p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #cccccc;
-}
-
-#newsletter-form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-#newsletter-form input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #333;
+.cta input[type="email"] {
+    padding: 0.5rem;
+    font-size: 1rem;
     border-radius: 5px;
-    color: #333;
+    border: 1px solid #ccc;
 }
 
-#newsletter-form button {
-    background-color: #00ff00;
-    color: #0d0d0d;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.cta button {
+    margin-left: 0.5rem;
 }
 
-#newsletter-form button:hover {
-    background-color: #009900;
-}
-
-/* Events Section */
-.events {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.event-card {
-    background-color: #2e2e2e;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.event-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-
-.event-date {
-    background-color: #00ff00;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #0d0d0d;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.event-date .event-month {
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.event-date .event-day {
-    font-size: 36px;
-}
-
-.event-details {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.event-details h2 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: #ffffff;
-}
-
-.event-details p {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #cccccc;
-}
-
-.event-details .btn {
-    margin-top: auto;
-    background-color: #00ff00;
-    color: #0d0d0d;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.event-details .btn:hover {
-    background-color: #009900;
-}
-
-/* Footer */
 footer {
-    background-color: #0d0d0d;
+    background: #333;
+    color: #fff;
+    padding: 1rem;
     text-align: center;
-    padding: 20px;
-    color: #cccccc;
-    font-size: 14px;
 }
 
 .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
+    margin-top: 1rem;
 }
 
 .footer-links li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 0.5rem;
 }
 
-.footer-links a {
-    color: #00ff00;
-    text-decoration: none;
-    transition: color 0.3s;
+.footer-links li a {
+    color: #fff;
 }
 
-.footer-links a:hover {
-    color: #009900;
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media only screen and (max-width: 768px) {
-    nav ul {
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .features {
         flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 18px;
     }
 
     .feature-card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .event-card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .btn-primary, .btn-secondary {
-        padding: 10px 20px;
-        font-size: 14px;
+        flex: 1 1 100%;
+        margin: 0.5rem 0;
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
     .hero h1 {
-        font-size: 28px;
+        font-size: 2rem;
     }
 
     .hero p {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .btn-primary, .btn-secondary {
-        padding: 8px 16px;
-        font-size: 12px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Keyframe Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
